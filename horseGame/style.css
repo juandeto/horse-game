@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  min-height: 100vh;
+  background: #ffc600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body button {
+  padding: 10px;
+  color: white;
+  background-color: #1a1a1a;
+  font-weight: 600;
+  border-radius: 5px;
+  margin: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.game {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 60%;
+  position: relative;
+}
+
+.hole {
+  flex: 1 0 33.33%;
+  overflow: hidden;
+  position: relative;
+  justify-content: space-around;
+}
+
+.hole:after {
+  display: block;
+  background: url("tranquera.png") bottom center no-repeat;
+  background-size: contain;
+  content: "";
+  width: 100%;
+  height: 200px;
+  z-index: 2;
+}
+
+.mole {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("caballoCartoon.png");
+  transition: all 0.4s;
+}
+
+.hole.up .mole {
+  top: 0;
+}
+
+.Card{
+    margin: 5px;
+    width: 180px;
+    height: 110px;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    position: absolute;
+    top: 73%;
+    left: 85%;
+}
+.Card.flip{
+    transform: rotateY(180deg);
+}
+.Card:active{
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.instrucciones{
+    background: #1a1a1a;
+    width: 100%;
+    height: 100%;
+    color: white;
+    color: #ffc600;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    padding: 10% 0;
+}
+
+.howToPlay {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10%;
+}
+
+.howToPlay,
+.instrucciones{
+    position: absolute;
+    border-radius: 5px;
+    backface-visibility: hidden;
+}
+
+.howToPlay{
+    transform: rotateY(180deg);
+}
