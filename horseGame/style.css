@@ -117,3 +117,59 @@ body button {
 .howToPlay{
     transform: rotateY(180deg);
 }
+
+@media (max-width: 500px){
+  body h1{
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  body button {
+    padding: 6px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+  }
+
+  .game{
+    width: 90%;
+    height: 400px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .hole {
+    flex: auto;
+    justify-content: space-around;
+    margin: 10px;
+  }
+  .hole:after{
+    height: 100px;
+    width: 100px;
+  }
+
+  .mole {
+    position: absolute;
+    top: 100%;
+    left:-30%;
+    width: 140%;
+    height: 140%;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("caballoCartoon.png");
+    transition: all 0.4s;
+  }
+  .hole.up .mole {
+    top: 0%;
+  }
+  .Card {
+    margin: 5px;
+    width: 180px;
+    height: 110px;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    position: absolute;
+    top: 90%;
+    left: 22%;
+}
+}
