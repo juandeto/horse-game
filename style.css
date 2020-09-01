@@ -118,6 +118,10 @@ body button {
     transform: rotateY(180deg);
 }
 
+.arrow{
+  display: none;
+}
+
 @media (max-width: 500px){
   body h1{
     font-size: 1.4rem;
@@ -131,7 +135,7 @@ body button {
 
   .game{
     width: 90%;
-    height: 400px;
+    height: 415px;
     display: flex;
     justify-content: space-around;
   }
@@ -169,7 +173,15 @@ body button {
     transform-style: preserve-3d;
     transition: transform .5s;
     position: absolute;
-    top: 90%;
+    top: 100%;
     left: 22%;
 }
+
+.arrow {
+  margin-top: 10px;
+  align-self: flex-start;
+  margin-left: 55px;
+  display: block;
+}
+
 }

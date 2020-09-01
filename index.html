@@ -9,14 +9,15 @@
   <body>
     <h1>El Juego Del Caballo Loco <span class="score">0</span></h1>
     <div class="Card">
-      <span class="howToPlay">Clickea sobre los caballos antes que desaparezcan!</span>
+      <span class="howToPlay"
+        >Clickea sobre los caballos antes que desaparezcan!</span
+      >
       <span class="instrucciones">COMO JUGAR?</span>
     </div>
-    
+
     <button onclick="startGame()">Start!</button>
     <div class="game">
       <div class="hole hole1">
-
         <div class="mole"></div>
       </div>
       <div class="hole hole2">
@@ -35,8 +36,12 @@
         <div class="mole"></div>
       </div>
     </div>
+    <div class="arrow">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-corner-right-down"><polyline points="10 15 15 20 20 15"></polyline><path d="M4 4h7a4 4 0 0 1 4 4v12"></path></svg>
+      </svg>
+    </div>
     <script>
-      const card=document.querySelector(".Card");
+      const card = document.querySelector(".Card");
       const holes = document.querySelectorAll(".hole");
       const scoreBoard = document.querySelector(".score");
       const moles = document.querySelectorAll(".mole");
@@ -51,9 +56,8 @@
       function randomHole(holes) {
         const idx = Math.round(Math.random() * (holes.length - 1));
         const hole = holes[idx];
-       
+
         if (hole === lastHole) {
-        
           return randomHole(holes);
         }
         lastHole = hole;
@@ -88,20 +92,19 @@
       function bonk(e) {
         if (!e.isTrusted) return; //cheater!
         score++;
-        console.log(score)
-        this.classList.remove('up');
+        console.log(score);
+        this.classList.remove("up");
         scoreBoard.textContent = score;
       }
 
-      moles.forEach( mole => mole.addEventListener('click', bonk));
+      moles.forEach((mole) => mole.addEventListener("click", bonk));
 
-
-      function rotate(){
-        console.log('click!')
-        card.classList.toggle('flip');
+      function rotate() {
+        console.log("click!");
+        card.classList.toggle("flip");
       }
 
-      card.addEventListener('click', rotate)
+      card.addEventListener("click", rotate);
     </script>
   </body>
 </html>
