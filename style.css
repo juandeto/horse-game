@@ -168,6 +168,7 @@ body button {
     background-repeat: no-repeat;
     background-image: url("caballoCartoon.png");
     transition: all 0.4s;
+    
   }
   .hole.up .mole {
     top: 0%;

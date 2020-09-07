@@ -81,14 +81,14 @@
       function startGame() {
         scoreBoard.textContent = 0;
         score = 0;
-        timeUp = !timeUp;
+        timeUp = false;
         btnText(timeUp)
         peep();
 
         
         setTimeout(() => {
           timeUp = true;
-          btnText(timeUp)
+          
         }, 10000);
       }
 
@@ -116,9 +116,12 @@
 
       function btnText(timeUp) {
         if(timeUp){
-          btn.innerHTML="Start!"
+          btn.innerHTML="Start!";
+          btn.disabled="false";
         }else{
-          btn.innerHTML="Restart!"
+          btn.innerHTML="On Game!";
+          btn.disabled="true";
+          btn.style.backgroundColor="#b3b3b3";
         }
       };
 
