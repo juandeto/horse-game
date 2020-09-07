@@ -34,6 +34,12 @@ body button {
   width: 60%;
   position: relative;
 }
+.score{
+  color: rgb(238, 8, 8);
+  text-shadow: 2px 2px 3px #230F09;
+  font-size: 2.5rem;
+  
+}
 
 .hole {
   flex: 1 0 33.33%;

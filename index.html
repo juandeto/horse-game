@@ -79,13 +79,13 @@
       }
 
       function startGame() {
-        btn.innerHTML=
         scoreBoard.textContent = 0;
         score = 0;
         timeUp = !timeUp;
         btnText(timeUp)
         peep();
 
+        
         setTimeout(() => {
           timeUp = true;
           btnText(timeUp)
@@ -95,9 +95,16 @@
       function bonk(e) {
         if (!e.isTrusted) return; //cheater!
         score++;
-        console.log(score);
+
         this.classList.remove("up");
         scoreBoard.textContent = score;
+        scoreBoard.style.textShadow="2px 2px 3px #fdfdfd";
+        scoreBoard.style.color="#fdfdfd";
+        setTimeout(() => {
+          scoreBoard.style.textShadow="2px 2px 3px #230F09";
+          scoreBoard.style.color="rgb(238, 8, 8)";
+        }, 200);
+        
       }
 
       moles.forEach((mole) => mole.addEventListener("click", bonk));
